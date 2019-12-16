@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>[Thực hành] Luyện tập với toán tử - bài 2</title>
+</head>
+<script>
+    function login() {
+        let login = document.getElementById('user').value;
+        let message;
+        if (login === 'Employee') {
+            message = 'Hello';
+        } else if (login === 'Director') {
+            message = 'Greattings';
+        } else if (login === "") {
+            message = "no login"
+        } else {
+            message = '';
+        }
+        document.getElementById('result').innerHTML = message;
+    }
+</script>
+
+<body>
+    <input type="text" id="user" placeholder="Username">
+    <input type="submit" id="submit" onclick="login()">
+    <p id="result"></p>
+</body>
+
+</html>
