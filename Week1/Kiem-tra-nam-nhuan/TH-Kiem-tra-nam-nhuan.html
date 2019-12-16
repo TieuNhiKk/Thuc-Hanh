@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>[Thực hành] Kiểm tra năm nhuận</title>
+    <script>
+        function calc() {
+            let year = parseFloat(document.getElementById('year').value);
+            if (year % 4 == 0) {
+                document.getElementById('result').innerHTML = ('Năm ' + year + ' là năm nhuận');
+            }
+            else {
+                document.getElementById('result').innerHTML = ('Năm ' + year + ' không phải là năm nhuận');
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <input type="number" id="year" value="2019">
+        <button type="button" onclick="calc()">Xem năm nhuận</button>
+    </form>
+    <p id="result"></p>
+</body>
+
+</html>
