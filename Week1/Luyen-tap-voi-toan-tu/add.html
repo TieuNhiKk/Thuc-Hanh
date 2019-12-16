@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>[Thực hành] Luyện tập với toán tử - bài 1</title>
+
+    <script>
+        function add() {
+            let a = parseFloat(document.getElementById("num1").value);
+            let b = parseFloat(document.getElementById("num2").value);
+            if ((a + b) < 4) {
+                result = "Below";
+            } else {
+                result = "Over";
+            }
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Viết chương trình nhập vào giá trị cho a và b. Tính tổng a và b, nếu tổng nhỏ hơn 4, hiển thị chuỗi Below, ngược
+    lại hiển thị Over. Lưu ý sử dụng toán tử-->
+    <input type="number" id="num1">
+    <input type="number" id="num2">
+    <button type="button" id="submit" onclick="add()">Kết quả</button>
+    <p id="result"></p>
+</body>
+
+</html>
