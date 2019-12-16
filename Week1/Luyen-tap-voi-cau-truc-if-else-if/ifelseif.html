@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>
+        Tên đăng nhập:<br>
+        <input type="text" id="user" value="Admin"><br>
+        Mật khẩu:<br>
+        <input type="password" id="pass" value="TheMaster"><br>
+        <br>
+        <input type="submit" value="Xác nhận" onclick="submit()">
+    </p>
+    <script>
+        function submit() {
+            let user = document.getElementById('user').value;
+            let pass = document.getElementById('pass').value;
+            let test = null;
+            if (user == 'Admin') {
+                if (pass == 'TheMaster') {
+                    alert("Welcome!");
+                }
+                else if (pass == '') {
+                    alert('Canceled');
+                } else
+                    alert('Wrong password');
+            }
+            else if (user == "") {
+                alert("canceld");
+            }
+            else
+                alert("I dont know you");
+        }
+    </script>
+</body>
+
+</html>
