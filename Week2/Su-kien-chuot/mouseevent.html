@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>[Thực hành] Sự kiện chuột</title>
+</head>
+
+<body>
+    <img src="https://contents.mediadecathlon.com/p1744688/k$74318222cb61e90373583c42db630b8f/football-ball-size-5-f100-hybrid-orange-blue.jpg"
+        alt="Quả bóng" id="ball" width="80px" height="80px">
+    <p>Click vào nút dưới dây để di chuyển quả bóng</p>
+    <button id="submit" onclick="moveR()">Click me!</button>
+    <script>
+        function move() {
+            let ball = document.getElementById('ball');
+            ball.style.position = 'relative';
+            ball.style.left = '0px';
+        }
+        function moveR() {
+
+            ball.style.left = parseInt(ball.style.left) + 10 + 'px';
+        }
+        window.onload = move;
+    </script>
+</body>
+
+</html>
