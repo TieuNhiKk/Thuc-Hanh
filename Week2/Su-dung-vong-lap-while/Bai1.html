@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>[Thực hành] Sử dụng vòng lặp while - Bài 1</title>
+</head>
+
+<body>
+    <script>
+        let num = prompt("Nhập vào một số: ");
+        let total = 0;
+        while (num != -1) {
+            total += parseFloat(num) ;
+            num = prompt("Nhập -1 để kết thúc: ");
+        }
+        alert("Tổng các cố vừa nhập là: " + total);
+    </script>
+</body>
+
+</html>
