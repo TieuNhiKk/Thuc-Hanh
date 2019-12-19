@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>[Thực hành] Sử dụng vòng lặp for</title>
+</head>
+
+<body>
+    <!-- Bài 2: Viết chương trình nhập vào một số bất kỳ lớn hơn 0. Tính tổng các phần tử từ 1 đến số vừa nhập vào. -->
+    <script>
+        let input = parseInt(prompt('Nhập vào số lớn hơn không'));
+        let total = 0;
+        if (isNaN(input) || input <= 0) {
+            alert('Nhập sai, Nhập lại')
+        }
+        else {
+            for (i = 1; i <= input; i++) {
+                total = total + i;
+            }
+            alert("Tổng các số từ 0 đến " + input + " là: " + total);
+        }
+    </script>
+</body>
+
+</html>
