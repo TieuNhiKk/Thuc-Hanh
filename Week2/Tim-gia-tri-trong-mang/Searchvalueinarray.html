@@ -10,21 +10,18 @@
 
 <body>
     <script>
-        let array = ['chicken', 'duck', 'dog', 'cat', 'mouse', 'turtle', 'fish'],
-            Animal = prompt('Enter a animal'),
-            animal=Animal.toLowerCase(),
-            have = false,
+        let array = [1,23,4,56,12,6,5,-1,-9,50,100],
+            number=parseFloat(prompt('Enter a number')),
             length = array.length,
             i;
         for (i = 0; i < length; i++) {
-            if (array[i] === animal) {
-                have = true;
+            if (array[i] === number) {
+                document.write("Value " + array[i] + " found at " + i);
+                break;
             }
-        }
-        if (have) {
-            document.write(Animal + " is exist");
-        } else {
-            document.write(Animal + " isn't exist");
+            if(i===length-1){
+                document.write("Value " + array[i] + " not found");
+            }
         }
     </script>
 </body>
