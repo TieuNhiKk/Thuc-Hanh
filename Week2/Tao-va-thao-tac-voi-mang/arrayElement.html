@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>[Thực hành] Tạo và thao tác với mảng</title>
+    <style>
+        body {
+            padding-top: 50px
+        }
+
+        input {
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        [type="text"] {
+            text-align: left;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Thêm phần tử vào mảng và hiển thị chúng</h2>
+    <hr>
+    <input type="text" id="txtValue" placeholder="Enter for add">
+    <input type="button" id="btnAdd" value="Add" onclick="add_element_to_array();">
+    <input type="button" id="btnDisplay" value="Display" onclick="display_array();">
+    <div id="result"></div>
+    <script>
+        let x = 0,
+            array = Array();
+        function add_element_to_array() {
+            array[x] = document.getElementById("txtValue").value;
+            alert("Element: " + array[x] + " Added at index " + x);
+            x++;
+            document.getElementById("txtValue ").value = "";
+        }
+        function display_array() {
+            let e = "<hr/>";
+            for (let i = 0; i < array.length; i++) {
+                e += "Element " + i + " = " + array[i] + "<br/>";
+            }
+            document.getElementById("result").innerHTML = e;
+        }
+    </script>
+</body>
+
+</html>
