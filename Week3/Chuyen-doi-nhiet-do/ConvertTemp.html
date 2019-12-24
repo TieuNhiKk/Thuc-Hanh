@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>[Thực hành] Chuyển đổi nhiệt độ</title>
+</head>
+
+<body>
+    <h1>Temperature</h1>
+    <p>
+        <label>Fehrenheit</label>
+        <input type="number" id="Fehrenheit" placeholder="Fehrenheit" oninput="tempConvert(this.value)"
+            onchange="tempConvert(this.value)">
+    </p>
+    <p>Celsius: <span id="outputCelsius"></span></p>
+    <script>
+        function tempConvert(temp) {
+            temp = parseFloat(temp);
+            if (isNaN(temp)) {
+                document.getElementById("outputCelsius").innerHTML = (`Please enter a temperature`);
+            }
+            else {
+                document.getElementById("outputCelsius").innerHTML = (temp - 32) / 1.8
+            }
+        }
+    </script>
+</body>
+
+</html>
