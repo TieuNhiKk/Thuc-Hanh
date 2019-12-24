@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>[Thực hành] Tạo và gọi hàm</title>
+</head>
+
+<body>
+    <script>
+        function processConfirm(answer) {
+            if (answer) {
+                return "Excellent. We'll play a nice game of chess.";
+            } else {
+                return "Maybe later then.";
+            }
+        }
+        let confirmAnswer = confirm("Shall we play a game?");
+        let theAnswer = processConfirm(confirmAnswer);
+        alert(theAnswer);
+    </script>
+</body>
+
+</html>
