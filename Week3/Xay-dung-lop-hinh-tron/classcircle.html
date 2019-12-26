@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>[Thực hành] Xây dựng lớp Hình Tròn</title>
+</head>
+
+<body>
+    <script>
+        function Circle(radius) {
+            this.radius = radius;
+            this.getRadius = function () {
+                return radius;
+            }
+            this.getArea = function () {
+                return Math.PI * radius * radius
+            }
+            this.getCircle = function () {
+                return Math.PI * 2 * radius;
+            }
+        }
+        let r=Math.ceil(Math.random()*10+20);
+        let circle = new Circle(r);
+        let area=circle.getArea();
+        let circum=circle.getCircle();
+        alert(`Area: ${area.toFixed(2)} unit area\n Circum: ${circum.toFixed(2)} unit circle`)
+    </script>
+</body>
+
+</html>
