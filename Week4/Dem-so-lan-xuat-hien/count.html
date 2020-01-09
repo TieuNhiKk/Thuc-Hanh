@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>[Thực hành] Đếm số lần xuất hiện của phần tử</title>
+    <style>
+        table {
+            text-align: center;
+            border-collapse: collapse;
+            margin-bottom: 12px;
+            width: 40%;
+        }
+
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 4%;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <table id="mang">Mảng:</table>
+    <p>Đếm và tìm vị trí của số trong mảng:</p>
+    <input type="text" oninput="count(this.value)" placeholder="Count number">
+    <p id="result"></p><span id="position"></span>
+    <script>
+        let array = new Array(100);
+        window.onload = function () {
+            for (let i = 0; i < 100; i++) {
+                array[i] = Math.round(Math.random() * 100);
+            }
+            let a = ''
+            for (let i = 1; i <= 100; i++) {
+                if (i % 10 === 0) {
+                    a += `<td title='Vị trí ${i}'> ${array[i - 1]} </td></tr>`;
+                } else {
+                    if (i === 1) {
+                        a += `<tr><td title='Vị trí ${i}'> ${array[i - 1]} </td>`;
+                    }
+                    else {
+                        a += `<td title='Vị trí ${i}'> ${array[i - 1]} </td>`;
+                    }
+                }
+            }
+            document.getElementById("mang").innerHTML = a;
+        }
+
+        function count(number) {
+            number = parseInt(number);
+            if (!isNaN(number) && number >= 0 && number <= 100) {
+                let total = 0;
+                let position = '';
+                for (let i = 0; i < 100; i++) {
+                    if (array[i] === number) {
+                        total += 1;
+                        position += (i + 1 + ' ');
+                    }
+                }
+                document.getElementById("result").innerHTML = `Có ${total} số ${number}`;
+                if (total > 0) {
+                    document.getElementById("position").innerHTML = `Tại vị trí ${position}`;
+                }
+            }
+            else {
+                document.getElementById("result").innerHTML = "Số không hợp lệ";
+            }
+        }
+    </script>
+</body>
+</html>
