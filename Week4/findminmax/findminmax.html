@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>[Thực hành] Đếm số lần xuất hiện của phần tử</title>
+    <style>
+        table {
+            text-align: center;
+            border-collapse: collapse;
+            margin-bottom: 12px;
+            width: 40%;
+        }
+
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 4%;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <table id="mang">Mảng:</table>
+    <button onclick="find()">Tìm số lớn nhất/nhỏ nhất:</button>
+    <p id="maxValue"></p><span id="minValue"></span>
+    <script>
+        let array = new Array(100);
+        window.onload = function () {
+            for (let i = 0; i < 100; i++) {
+                array[i] = Math.round(Math.random() * 100);
+            }
+            let a = ''
+            for (let i = 1; i <= 100; i++) {
+                if (i % 10 === 0) {
+                    a += `<td title='Vị trí ${i}'> ${array[i - 1]} </td></tr>`;
+                } else {
+                    if (i === 1) {
+                        a += `<tr><td title='Vị trí ${i}'> ${array[i - 1]} </td>`;
+                    }
+                    else {
+                        a += `<td title='Vị trí ${i}'> ${array[i - 1]} </td>`;
+                    }
+                }
+            }
+            document.getElementById("mang").innerHTML = a;
+        }
+        function minValue(arr) {
+            if (arr.length > 0) {
+                let min = arr[0];
+                for (let i = 0; i < arr.length; i++) {
+                    if (arr[i] < min) {
+                        min = arr[i];
+                    }
+                }
+                return min;
+            }
+            else {
+                return "Mảng rỗng";
+            }
+        }
+        function maxValue(arr) {
+            if (arr.length > 0) {
+                let max = arr[0];
+                for (let i = 0; i < arr.length; i++) {
+                    if (arr[i] > max) {
+                        max = arr[i];
+                    }
+                }
+                return max;
+            }
+            else {
+                return "Mảng rỗng";
+            }
+        }
+        function find() {
+            document.getElementById("minValue").innerHTML = "Giá trị nhỏ nhất " + minValue(array);
+            document.getElementById("maxValue").innerHTML = "Giá trị lớn nhất " + maxValue(array);
+        }
+    </script>
+</body>
+</html>
