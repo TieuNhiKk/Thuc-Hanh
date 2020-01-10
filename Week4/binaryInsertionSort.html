@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Binary Insertion Sort</title>
+</head>
+<body>
+    <script>
+        function binaryInsertionSort(array) {
+            for (let i = 1; i < array.length; i++) {
+                let l = 0;
+                let r = i - 1;
+                let x = array[i];
+                while (l <= r) {
+                    m = Math.floor((l + r) / 2);
+                    if (array[m] > x) {
+                        r = m - 1;
+                    }
+                    else {
+                        l = m + 1;
+                    }
+                }
+                for (let j = i; j > l; j--) {
+                    array[j] = array[j - 1];
+                    array[l] = x;
+                }
+            }
+            return array;
+        }
+        let arr = [1, 4, 2, 8, 5, 7];
+        binaryInsertionSort(arr);
+    </script>
+</body>
+</html>
