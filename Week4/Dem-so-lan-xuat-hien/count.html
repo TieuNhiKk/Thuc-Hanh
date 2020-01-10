@@ -60,12 +60,16 @@
                     }
                 }
                 document.getElementById("result").innerHTML = `Có ${total} số ${number}`;
+                if (total == 0) {
+                    document.getElementById("position").innerHTML = '';
+                }
                 if (total > 0) {
                     document.getElementById("position").innerHTML = `Tại vị trí ${position}`;
                 }
             }
             else {
                 document.getElementById("result").innerHTML = "Số không hợp lệ";
+                document.getElementById("position").innerHTML = '';
             }
         }
     </script>
